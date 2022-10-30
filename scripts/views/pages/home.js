@@ -1,6 +1,6 @@
 const Home = {
   async render() {
-    return `Hello World`;
+    return `<div class="container">Hello world</div>`;
   },
 };
 
