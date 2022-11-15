@@ -1,0 +1,22 @@
+.navbar {
+  z-index: 999;
+}
+
+@media (min-width: 992px) {
+  .navbar .navbar-nav .nav-item .nav-item-content {
+    padding: 0.5rem;
+    background: #00ffff;
+    /* display: none; */
+    position: absolute;
+    top: 3.5rem;
+    transform: rotateX(-90deg);
+    transform-origin: 0 0 0;
+    transition: transform 0.5s;
+    z-index: -9999;
+  }
+
+  .navbar .navbar-nav .nav-item:hover .nav-item-content {
+    /* display: block; */
+    transform: rotateX(0);
+  }
+}
