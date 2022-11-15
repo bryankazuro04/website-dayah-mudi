@@ -12,11 +12,19 @@ const UrlParser = {
 
   _urlSplitter(url) {
     const urlsSplits = url.split("/");
-    return { resource: urlsSplits || null };
+    return {
+      resource: urlsSplits || null,
+      id: urlsSplits[2] || null,
+      verb: urlsSplits[3] || null,
+    };
   },
 
   _urlCombiner(splitedUrl) {
-    return splitedUrl.resource ? `/${splitedUrl.resource}` : "/";
+    return (
+      (splitedUrl.resource ? `/${splitedUrl.resource}` : "/") +
+      (splitedUrl.id ? "/:id" : "") +
+      (splitedUrl.verb ? `/${splitedUrl.verb}` : "")
+    );
   },
 };
 
